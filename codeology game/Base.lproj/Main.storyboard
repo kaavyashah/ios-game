@@ -27,6 +27,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Start Game!"/>
+                                <connections>
+                                    <segue destination="8zW-X7-h8N" kind="show" id="tF2-An-P1B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.74289089894766902" green="0.94012752706187463" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -37,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Game View Controller-->
         <scene sceneID="WKe-lI-HJH">
             <objects>
-                <viewController id="8zW-X7-h8N" customClass="ViewController" customModule="codeology_game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8zW-X7-h8N" customClass="StartGameViewController" customModule="codeology_game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6nN-ip-0wc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,14 +55,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Md-n6-qab">
-                                <rect key="frame" x="116" y="66" width="143" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Timer">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf0-lJ-6gk">
                                 <rect key="frame" x="319" y="34" width="40" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,6 +64,9 @@
                                 <rect key="frame" x="121" y="282" width="132" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Play"/>
+                                <connections>
+                                    <segue destination="bkG-LE-tcg" kind="show" id="y5a-k0-zrU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAQ-Da-L7j">
                                 <rect key="frame" x="82" y="433" width="56" height="60"/>
@@ -80,12 +78,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Replay"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MN-s7-lyW">
+                                <rect key="frame" x="121" y="127" width="133" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.67919365397298748" blue="0.62844374256553959" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="2tt-0L-981"/>
                     </view>
                     <connections>
-                        <outlet property="scoreLabel" destination="8Md-n6-qab" id="mWC-Ih-Vyn"/>
+                        <outlet property="scoreLabel" destination="1MN-s7-lyW" id="uW7-zl-Lz4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBc-3L-rzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,6 +135,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBd-CX-9kw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1663.2" y="133.5832083958021"/>
+        </scene>
+        <!--Game Play View Controller-->
+        <scene sceneID="D2L-B4-Q2V">
+            <objects>
+                <viewController id="bkG-LE-tcg" customClass="GamePlayViewController" customModule="codeology_game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fB4-bG-tT7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="m7d-oS-lrb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="td7-3g-K23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="844"/>
         </scene>
     </scenes>
     <resources>

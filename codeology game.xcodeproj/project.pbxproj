@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01241480216711B400249C21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0124147F216711B400249C21 /* ViewController.swift */; };
+		012414822167174E00249C21 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012414812167174E00249C21 /* StartGameViewController.swift */; };
+		012414842167193100249C21 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012414832167193100249C21 /* GamePlayViewController.swift */; };
 		019A50742166193500556C67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A50732166193500556C67 /* AppDelegate.swift */; };
 		019A50792166193500556C67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019A50772166193500556C67 /* Main.storyboard */; };
 		019A507B2166193600556C67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019A507A2166193600556C67 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		0124147F216711B400249C21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		012414812167174E00249C21 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
+		012414832167193100249C21 /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		019A50702166193500556C67 /* codeology game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "codeology game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		019A50732166193500556C67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019A50782166193500556C67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +60,9 @@
 			children = (
 				019A50732166193500556C67 /* AppDelegate.swift */,
 				019A50772166193500556C67 /* Main.storyboard */,
+				012414832167193100249C21 /* GamePlayViewController.swift */,
 				0124147F216711B400249C21 /* ViewController.swift */,
+				012414812167174E00249C21 /* StartGameViewController.swift */,
 				019A507A2166193600556C67 /* Assets.xcassets */,
 				019A507C2166193600556C67 /* LaunchScreen.storyboard */,
 				019A507F2166193600556C67 /* Info.plist */,
@@ -137,6 +143,8 @@
 			files = (
 				01241480216711B400249C21 /* ViewController.swift in Sources */,
 				019A50742166193500556C67 /* AppDelegate.swift in Sources */,
+				012414842167193100249C21 /* GamePlayViewController.swift in Sources */,
+				012414822167174E00249C21 /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 938U96JF8P;
 				INFOPLIST_FILE = "codeology game/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 938U96JF8P;
 				INFOPLIST_FILE = "codeology game/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
