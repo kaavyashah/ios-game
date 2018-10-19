@@ -45,7 +45,7 @@ class GamePlayViewController: UIViewController {
     var blockSize = 100.0
     
     //hue difference value, if time allows
-    var difference = 0.5
+    var difference = 0.95
     
     //how to know if the game should end
     var gameOver = false
@@ -69,6 +69,11 @@ class GamePlayViewController: UIViewController {
     @objc func timerUpdate(){
         seconds -= 1
         timerLabel.text = String(seconds)
+        if (timerLabel.text == String(0)){
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "End") as! EndGameViewController
+            self.present(vc, animated: false, completion: nil)
+        }
+        
     }
     
     //generates a random UIColor
@@ -86,7 +91,9 @@ class GamePlayViewController: UIViewController {
             colorVals[i] = allColor
         }
         
-        
+        var r : CGFloat = 0, g : CGFloat = 0, b : CGFloat = 0, a : CGFloat = 0
+        allColor.getRed(&r, green: &g, blue: &b, alpha: &a)
+        print([r, g, b])
         var newColor = randomColor()
         while (newColor == allColor) {
             newColor = randomColor()
@@ -165,7 +172,7 @@ class GamePlayViewController: UIViewController {
         let maxVals = (minVals.0 + blockSize, minVals.1 + blockSize)
         
         //case when the correct block is picked
-        if minVals <= touchPoint && touchPoint <= maxVals {
+        if minVals.0 <= touchPoint.0 && minVals.1 <= touchPoint.1 && touchPoint.0 <= maxVals.0 && touchPoint.1 <= maxVals.1 {
             timer.invalidate()
             score += 1
             scoreLabel.text = String(score)
@@ -173,8 +180,11 @@ class GamePlayViewController: UIViewController {
         }
         else {
             //have it go to an end game controller view
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "End") as! EndGameViewController
+            self.present(vc, animated: false, completion: nil)
         }
     }
+
     
 
     /*
