@@ -1,0 +1,6 @@
+framework module Pods_codeology_game {
+  umbrella header "Pods-codeology game-umbrella.h"
+
+  export *
+  module * { export * }
+}

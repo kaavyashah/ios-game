@@ -20,6 +20,7 @@ class GamePlayViewController: UIViewController {
     @IBAction func reloadGame(_ sender: Any) {
         score = 0
         scoreLabel.text = String(score)
+        SplunkLogger.shared.logEvent(name: "Game Restarted", level: .Debug)
         startNewRound()
     }
     
@@ -104,6 +105,7 @@ class GamePlayViewController: UIViewController {
     //called to start a new round
     func startNewRound() {
         //reset time seconds to be 11
+        SplunkLogger.shared.logEvent(name: "new round has started", level: .Debug)
         seconds = 11
         timerUpdate()
         
@@ -176,6 +178,7 @@ class GamePlayViewController: UIViewController {
             timer.invalidate()
             score += 1
             scoreLabel.text = String(score)
+            SplunkLogger.shared.logEvent(name: "Correct Block Touched", level: .Debug)
             startNewRound()
         }
         else {

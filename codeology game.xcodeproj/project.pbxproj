@@ -15,6 +15,7 @@
 		019A50792166193500556C67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019A50772166193500556C67 /* Main.storyboard */; };
 		019A507B2166193600556C67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019A507A2166193600556C67 /* Assets.xcassets */; };
 		019A507E2166193600556C67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019A507C2166193600556C67 /* LaunchScreen.storyboard */; };
+		12F320A122F4B67E006AD26D /* SplunkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F320A022F4B67E006AD26D /* SplunkLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,10 @@
 		019A507A2166193600556C67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019A507D2166193600556C67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019A507F2166193600556C67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12F320A022F4B67E006AD26D /* SplunkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplunkLogger.swift; sourceTree = "<group>"; };
+		34ADC3B3C9996C073E536DEC /* Pods-codeology game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codeology game.release.xcconfig"; path = "Target Support Files/Pods-codeology game/Pods-codeology game.release.xcconfig"; sourceTree = "<group>"; };
+		6E669ECD70DAE1B5380334F4 /* Pods-codeology game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codeology game.debug.xcconfig"; path = "Target Support Files/Pods-codeology game/Pods-codeology game.debug.xcconfig"; sourceTree = "<group>"; };
+		F666B7AF31F24711AAA3D501 /* Pods_codeology_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_codeology_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +51,8 @@
 			children = (
 				019A50722166193500556C67 /* codeology game */,
 				019A50712166193500556C67 /* Products */,
+				FB256007FF1EDE5F25BAE41D /* Pods */,
+				823D4607AC91BE1D373B9B44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +70,7 @@
 				019A50732166193500556C67 /* AppDelegate.swift */,
 				019A50772166193500556C67 /* Main.storyboard */,
 				012B27CC21781C93004FCE15 /* EndGameViewController.swift */,
+				12F320A022F4B67E006AD26D /* SplunkLogger.swift */,
 				012414832167193100249C21 /* GamePlayViewController.swift */,
 				0124147F216711B400249C21 /* ViewController.swift */,
 				012414812167174E00249C21 /* StartGameViewController.swift */,
@@ -73,6 +81,23 @@
 			path = "codeology game";
 			sourceTree = "<group>";
 		};
+		823D4607AC91BE1D373B9B44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F666B7AF31F24711AAA3D501 /* Pods_codeology_game.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB256007FF1EDE5F25BAE41D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6E669ECD70DAE1B5380334F4 /* Pods-codeology game.debug.xcconfig */,
+				34ADC3B3C9996C073E536DEC /* Pods-codeology game.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,6 +105,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 019A50822166193600556C67 /* Build configuration list for PBXNativeTarget "codeology game" */;
 			buildPhases = (
+				ED72EC20170DEFBF72E1E0B3 /* [CP] Check Pods Manifest.lock */,
 				019A506C2166193500556C67 /* Sources */,
 				019A506D2166193500556C67 /* Frameworks */,
 				019A506E2166193500556C67 /* Resources */,
@@ -139,6 +165,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ED72EC20170DEFBF72E1E0B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-codeology game-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		019A506C2166193500556C67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -148,6 +195,7 @@
 				019A50742166193500556C67 /* AppDelegate.swift in Sources */,
 				012B27CD21781C93004FCE15 /* EndGameViewController.swift in Sources */,
 				012414842167193100249C21 /* GamePlayViewController.swift in Sources */,
+				12F320A122F4B67E006AD26D /* SplunkLogger.swift in Sources */,
 				012414822167174E00249C21 /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +338,7 @@
 		};
 		019A50832166193600556C67 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E669ECD70DAE1B5380334F4 /* Pods-codeology game.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,6 +358,7 @@
 		};
 		019A50842166193600556C67 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34ADC3B3C9996C073E536DEC /* Pods-codeology game.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

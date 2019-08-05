@@ -1,0 +1,16 @@
+PODS:
+  - SplunkMint (5.2.5)
+
+DEPENDENCIES:
+  - SplunkMint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SplunkMint
+
+SPEC CHECKSUMS:
+  SplunkMint: c5e2d1f09c9dc7721adccce6045430b81820c6b5
+
+PODFILE CHECKSUM: aa65701511e339d8f5024c29a3998759c0b0cd73
+
+COCOAPODS: 1.7.5
